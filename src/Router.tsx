@@ -14,7 +14,7 @@ export default function router() {
 
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: '' || '/rest-countries-api',
       element: <App />,
       errorElement: <ErrorPage />,
     },
