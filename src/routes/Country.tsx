@@ -15,6 +15,7 @@ export default function Country() {
         `https://restcountries.com/v3.1/name/${countryName}?fullText=true`
       )
       const country = await response.json();
+      console.log(country)
       setCountry(country);
       getBorders(country[0].borders);
       setIsLoading(false);
@@ -59,13 +60,14 @@ export default function Country() {
       <Link target='_top' to='/'><button className='back-button'>Back</button></Link>
       {isLoading ? <div className='loader-container'><div className="loader"></div></div> :
       country.map((c:any, idx:number) => {
-        const nativeNames:any = Object.values(c.name.nativeName)[0];
+        let nativeNames:any = c.name.nativeName ? Object.values(c.name.nativeName)[0] : null;
+        nativeNames = nativeNames ? nativeNames.common : null;
         return (
           <article className='country' key={idx}>
             <img className='flag' src={c.flags.svg} alt={c.flags.alt} />
             <div className="details">
               <h1>{c.name.common}</h1>
-              <h2>Native Name: <span>{nativeNames.common}</span></h2>
+              <h2>Native Name: <span>{nativeNames}</span></h2>
               <h2>Population: <span>{c.population.toLocaleString()}</span></h2>
               <h2>Region: <span>{c.region}</span></h2>
               <h2>Sub Region: <span>{c.subregion}</span></h2>
