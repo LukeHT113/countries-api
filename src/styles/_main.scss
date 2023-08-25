@@ -159,7 +159,7 @@ button {
 }
 
 .country {
-  height: 100vh;
+  height: calc(100vh - 202px);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
