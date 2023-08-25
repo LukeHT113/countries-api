@@ -1,6 +1,6 @@
 {
-  "homepage": "https://lukeht113.github.io/rest-countries-api/",
-  "name": "countries-api",
+  "homepage": "https://lukeht113.github.io/rest-countries-api/#",
+  "name": "rest-countries-api",
   "private": false,
   "version": "0.0.0",
   "type": "module",

@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import App from './App.tsx'
@@ -12,9 +12,9 @@ export default function router() {
 
   const { theme } = useContext(ThemeContext);
 
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
-      path: '' || '/rest-countries-api',
+      path: '/',
       element: <App />,
       errorElement: <ErrorPage />,
     },
