@@ -1,0 +1,38 @@
+@use '../abstract/colors' as *;
+
+body {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin color-scheme($text, $background, $highlight) {
+  color: $text;
+  background-color: $background;
+
+  a {
+    color: $text;
+  }
+
+  .header, 
+  .countries .details,
+  .country .border,
+  .back-button,
+  .searchbar,
+  .filter {
+    background-color: $highlight;
+  }
+  
+  .loader {
+    border: 16px solid $text;
+    border-top: 16px solid $background;
+  }
+}
+
+.light {
+  @include color-scheme($light-text, $light-background, $light-highlight)
+}
+
+.dark {
+  @include color-scheme($dark-text, $dark-background, $dark-highlight)
+}
